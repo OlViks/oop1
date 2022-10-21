@@ -4,24 +4,30 @@ public class Main {
         talk_2();
         talk_3();
         talk_4();
+        talk_5();
+
 
     }
 
 
-    private static void talk_1() {
-        Human maksim = new Human(35, " Максим", " Минск");
+    public static void talk_1() {
+        Human maksim = new Human(0, " Максим", " Минск");
         Human ana = new Human(-29, " Аня", " Москва");
         Human kate = new Human(28, null, " Калининград");
-        Human artem = new Human(35, " Артем", " Москва");
+        Human artem = new Human(35, " Артем", null);
 
+        maksim.human();
+        maksim.setAge(30);
         maksim.human();
         ana.human();
         kate.human();
         artem.human();
+        artem.setCity("Москва");
+        artem.human();
         System.out.println();
     }
 
-    private static void talk_2() {
+    public static void talk_2() {
         Human maksim = new Human(35, " Максим", " Минск", "бренд-менеджером");
         Human ana = new Human(29, " Аня", " Москва", "методистом образовательных программ");
         Human kate = new Human(28, " Катя", " Калининград","продакт-менеджером");
@@ -31,10 +37,9 @@ public class Main {
         kate.helloHuman();
         artem.helloHuman();
         System.out.println();
-
     }
 
-    private static void talk_3() {
+    public static void talk_3() {
 
     Car granta = new Car("Lada", "Granta", 1.7d, "Желтый", 2015, "Россия");
     Car audi = new Car("Audi", "A8", 50.0d, "", 2020, "Германия");
@@ -51,8 +56,19 @@ public class Main {
 
     }
 
-    private static void talk_4() {
+    public static void talk_4() {
+        Human vladimir = new Human(21, "Владимир", "Казань", "ни где.");
 
+    }
+    public static void talk_5() {
+        Flower roza = new Flower("Роза", "", "Голландии", 35.59, 0);
+        Flower Chrysanthemum = new Flower("Хризантема", "", "", 15, 5);
+        Flower pion = new Flower("Пион", "", "Англии", 69.9, 1);
+        Flower gypsophila = new Flower("Гипсофила", "", "Голландии", 35.59, 0);
+    roza.flower();
+    Chrysanthemum.flower();
+    pion.flower();
+    gypsophila.flower();
     }
 
 }
