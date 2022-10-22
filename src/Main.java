@@ -58,17 +58,23 @@ public class Main {
 
     public static void talk_4() {
         Human vladimir = new Human(21, "Владимир", "Казань", "ни где.");
-
+        vladimir.helloHuman();
     }
     public static void talk_5() {
-        Flower roza = new Flower("Роза", "", "Голландии", 35.59, 0);
-        Flower Chrysanthemum = new Flower("Хризантема", "", "", 15, 5);
-        Flower pion = new Flower("Пион", "", "Англии", 69.9, 1);
-        Flower gypsophila = new Flower("Гипсофила", "", "Голландии", 35.59, 0);
+        Flower roza = new Flower("Роза", "", "Голландии", 35.5f, 0);
+        Flower chrysanthemum = new Flower("Хризантема", "", "", 15f, 5);
+        Flower pion = new Flower("Пион", "", "Англии", 69.9f, 1);
+        Flower gypsophila = new Flower("Гипсофила", "", "Турция", 19.5f, 10);
     roza.flower();
-    Chrysanthemum.flower();
+    chrysanthemum.flower();
     pion.flower();
     gypsophila.flower();
+    pion.setFlowerColor("Зеленый");
+    pion.flower();
+        Bouquet bouquet = new Bouquet(new Flower[]{roza, chrysanthemum, pion, gypsophila});
+        System.out.println("Стоимость букета: " + bouquet.getCost());
+        System.out.println("Букет простоит : " + bouquet.getLifeSpan());
+
     }
 
 }

@@ -1,27 +1,74 @@
-import java.util.Objects;
-
 public class Flower {
 
-    private final String flowerColor;
-    private final String name;
-    private final String country;
-    private final double cost;
-    int lifeSpan;
+    private String flowerColor;
+    private String title;
+    private String country;
+    private float cost;
+    private int lifeSpan;
 
-    Flower(String name, String flowerColor, String country, double cost, int lifeSpan) {
-        if (flowerColor != null && !flowerColor.isEmpty()) {
+    public Flower(String title, String flowerColor, String country, float cost, int lifeSpan) {
+        setTitle(title);
+        setFlowerColor(flowerColor);
+        setCountry(country);
+        setCost(cost);
+        setLifeSpan(lifeSpan);
+    }
+
+    public void flower() {
+        System.out.println("Название: " + title + " цвет " + flowerColor + " из " + country + " стоимость " + cost + " рублей "
+                + " срок стояния " + lifeSpan + " дней");
+    }
+
+    public String getFlowerColor() {
+        return flowerColor;
+    }
+
+    public void setFlowerColor(String flowerColor) {
+        if (flowerColor != null && !flowerColor.isEmpty() && !flowerColor.isBlank()) {
             this.flowerColor = flowerColor;
         } else {
             this.flowerColor = "белый";
         }
-        this.country = Objects.requireNonNullElse(country, "Россия");
-        this.cost = Math.max(cost, 1);
-        this.lifeSpan = Math.max(lifeSpan, 3);
-        this.name = Objects.requireNonNullElse(name, "Введите название");
     }
 
-    public void flower() {
-        System.out.println("Название: " + name + " цвет " + flowerColor + " из " + country + " стоимость " + cost + " рублей "
-                + " срок стояния " + lifeSpan + " дней");
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        if (country != null && !country.isEmpty() && !country.isBlank()) {
+            this.country = country;
+        } else {
+            this.country = "России";
+        }
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(float cost) {
+        if (cost != 0) {
+            this.cost = cost;
+        } else {
+            this.cost = 1;
+        }
+    }
+
+    public int getLifeSpan() {
+        return lifeSpan;
+    }
+
+    public int setLifeSpan(int lifeSpan) {
+        this.lifeSpan = lifeSpan > 0 ? lifeSpan : 3;
+        return this.lifeSpan;
+    }
+
+    public String title() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
